@@ -1,0 +1,21 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+body {
+    font-family: 'Zalando Sans', sans-serif;
+}
+
+h1, h2, h3, h5 {
+    font-family: 'Zalando Sans Expanded', sans-serif;
+}
+
+#product-container {
+    padding: 0 4rem;
+}
+
+.card-subtitle{
+    color: darkslategrey;
+    font-weight: 600;
+}
+
+#addItemButton {
+    display: inline-block;
+}
