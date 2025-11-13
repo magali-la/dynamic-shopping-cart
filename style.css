@@ -19,3 +19,11 @@ h1, h2, h3, h5 {
 #addItemButton {
     display: inline-block;
 }
+
+.card {
+    cursor: pointer;
+}
+
+.card:active {
+    opacity: 80%;
+}
