@@ -15,37 +15,37 @@
     <h1>Lab 5.1 Dynamic Shopping Cart</h1>
     <h2>Best-Selling Items!</h2>
     <hr>
-    <div class="products row mx-5">
+    <div id="products" class="row mx-5">
         <!-- teal couch product -->
-        <div class="col">
+        <div id="tealCol" class="col">
             <div class="card">
                 <img class="card-img-top img-fluid" src="https://images.unsplash.com/photo-1567016507665-356928ac6679?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="teal blue sofa with pink phont">
                 <div class="card-body">
                     <h5 class="card-title">Teal Couch</h5>
-                    <p class="card-subtitle" id="tealPrice">$100</p>
+                    <p class="card-subtitle">$<span id="tealPrice">100</span></p>
                     <p class="card-text">Description of Teal Couch</p>
                 </div>
             </div>
         </div>
         <!-- orange couch product -->
-        <div class="col">
+        <div id="orangeCol" class="col">
             <div class="card">
                 <img class="card-img-top img-fluid" src="https://images.unsplash.com/photo-1567016432779-094069958ea5?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="orange sofa with pink pullow and lemons scattered">
                 <div class="card-body">
                     <h5 class="card-title">Orange Couch</h5>
-                    <p class="card-subtitle" id="orangePrice">$200</p>
+                    <p class="card-subtitle">$<span id="orangePrice">200</span></p>
                     <p class="card-text">Description of Orange Couch</p>
                 </div>
             </div>
         </div>
 
         <!-- chair and table set -->
-        <div class="col">
+        <div id="tableCol" class="col">
             <div class="card">
                 <img class="card-img-top img-fluid" src="https://images.unsplash.com/photo-1567790375865-21c42874446e?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="light marble table and chair with blue flowers set">
                 <div class="card-body">
                     <h5 class="card-title">Table Set</h5>
-                    <p class="card-subtitle" id="tablePrice">$250</p>
+                    <p class="card-subtitle">$<span id="tablePrice">250</span></p>
                     <p class="card-text">Description of Table Set</p>
                 </div>
             </div>
@@ -53,8 +53,8 @@
     </div>
     <div id="product-container" class="d-flex flex-row align-items-center gap-3 my-4">
         <input type="text" id="product-name" class="form-control w-50" placeholder="Product Name">
-        <h4 class="item-price-p w-25 fs-5">Price: <span id="item-price">0</span></h4>
-        <button id="addItemButton" class="btn fs-5 btn-success"><i class="bi bi-cart-plus fs-4"></i> Add Product</button>
+        <h4 class="item-price-p w-25 fs-5">Price: $<span id="item-price">0</span></h4>
+        <button id="add-product" class="btn fs-5 btn-success"><i class="bi bi-cart-plus fs-4"></i> Add Product</button>
     </div>
     <h2>Your Cart</h2>
     <hr>
