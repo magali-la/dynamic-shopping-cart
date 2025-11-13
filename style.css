@@ -27,3 +27,9 @@ h1, h2, h3, h5 {
 .card:active {
     opacity: 80%;
 }
+
+.list-group-item {
+    font-size: large;
+    color: darkslategrey;
+    font-weight: 600;
+}

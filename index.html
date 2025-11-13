@@ -22,7 +22,7 @@
                 <img class="card-img-top img-fluid" src="https://images.unsplash.com/photo-1567016507665-356928ac6679?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="teal blue sofa with pink phont">
                 <div class="card-body">
                     <h5 class="card-title">Teal Couch</h5>
-                    <p class="card-subtitle">$<span id="tealPrice">100</span></p>
+                    <p class="card-subtitle">$<span id="tealPrice">250</span></p>
                     <p class="card-text">Description of Teal Couch</p>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                 <img class="card-img-top img-fluid" src="https://images.unsplash.com/photo-1567790375865-21c42874446e?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="light marble table and chair with blue flowers set">
                 <div class="card-body">
                     <h5 class="card-title">Table Set</h5>
-                    <p class="card-subtitle">$<span id="tablePrice">250</span></p>
+                    <p class="card-subtitle">$<span id="tablePrice">100</span></p>
                     <p class="card-text">Description of Table Set</p>
                 </div>
             </div>
@@ -59,6 +59,16 @@
     <h2>Your Cart</h2>
     <hr>
     <h4>Total: $<span id="total-price">0</span></h4>
-    <ul id="cart"></ul>
+    <ul id="cart" class="list-group-flush"></ul>
+
+    <!-- make a list item template that will be cloned in the event listener for the add product button -->
+    <li class="list-group-item d-flex flex-row justify-content-between align-items-center py-3 px-2 border-2">
+        <div id="tileImg">
+            <img src="" alt="" class="w-10">            
+        </div>
+        <h5 id="tileName">Name</h5>
+        <p class="tilePrice fs-5 align-self-center">$<span id="tilePrice">100</span></p>
+        <button id="removeItemButton" class="btn fs-5 btn-danger"><i class="bi bi-cart-dash fs-4"></i> Remove Item</button>
+    </li>
 </body>
 </html>
