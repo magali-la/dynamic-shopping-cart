@@ -34,7 +34,16 @@ productsRow.addEventListener("click", (event) => {
     let productPrice = card.querySelector('span');
     console.log(`${productName.innerText} has been clicked!`);
 
-    // update the inner text for the two values
-    productNameInput.value = productName.innerText;
-    itemPriceSpan.innerText = productPrice.innerText;
+    // create logic to toggle if the input value is already the card clicked, restore it to the original state, otherwise change the info
+    if (productNameInput.value === productName.innerText) {
+        productNameInput.disabled = false;
+        productNameInput.value = '';
+        itemPriceSpan.innerText = 0;
+    } else {
+        // update the inner text for the two values
+        productNameInput.value = productName.innerText;
+        // disable user from changing chosen value
+        productNameInput.disabled = true;
+        itemPriceSpan.innerText = productPrice.innerText;
+    }
 });
