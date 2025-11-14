@@ -9,6 +9,8 @@ const tealProduct = document.getElementById('tealCol');
 const orangeProduct = document.getElementById('orangeCol');
 const tableProduct = document.getElementById('tableCol');
 
+let imageSource;
+
 let totalPrice = 0;
 
 // function to calculate total price
@@ -32,6 +34,8 @@ productsRow.addEventListener("click", (event) => {
     // define variables for the values in each product card
     let productName = card.querySelector('.card-title');
     let productPrice = card.querySelector('span');
+    imageSource = card.querySelector('.card-img-top').src;
+
     console.log(`${productName.innerText} has been clicked!`);
 
     // create logic to toggle if the input value is already the card clicked, restore it to the original state, otherwise change the info
@@ -45,5 +49,32 @@ productsRow.addEventListener("click", (event) => {
         // disable user from changing chosen value
         productNameInput.disabled = true;
         itemPriceSpan.innerText = productPrice.innerText;
-    }
+    }; 
+});
+
+addProductButton.addEventListener("click", function() {
+    // take the input value at that point in time and the price
+    let selectedProductObj = {
+        name: productNameInput.value,
+        price: itemPriceSpan.innerText,
+        img: imageSource
+    };
+    console.log(selectedProductObj);
+
+    // define template
+    let template = document.getElementById('tileTemplate');
+
+    // create a clone to edit and append
+    let clonedTile = template.cloneNode(true);
+    let tileImage = clonedTile.querySelector('#tileImg');
+    let tileName = clonedTile.querySelector('#tileName');
+    let tilePrice = clonedTile.querySelector('#tilePrice');
+
+    tileImage.src = selectedProductObj.img;
+    tileImage.alt = tileName.innerText;
+    tileName.innerText = selectedProductObj.name;
+    tilePrice.innerText = selectedProductObj.price;
+
+    // append to cart
+    cart.appendChild(clonedTile);
 });
