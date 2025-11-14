@@ -34,7 +34,7 @@ h1, h2, h3, h5 {
     font-weight: 600;
 }
 
-#tileImg {
+.tileImg {
     width: 150px;
     height: auto;
 }

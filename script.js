@@ -19,14 +19,6 @@ function updateTotalPrice(amount) {
     totalPriceSpan.innerText = totalPrice.toFixed(2);
 }
 
-// function to remove an item
-function removeItem(event) {
-    const item = event.target.closest('li');
-    const price = parseFloat(item.dataset.price);
-    updateTotalPrice(-price);
-    item.remove();
-}
-
 // set event listener to the div container for the products with event target, to fill the product name input field and set the price to whatever is in that P as inner text to the itemPrice section. 
 productsRow.addEventListener("click", (event) => {
     // define card as a variable to search within it for values
@@ -68,13 +60,13 @@ addProductButton.addEventListener("click", function() {
     console.log(selectedProductObj);
 
     // define template
-    let template = document.getElementById('tileTemplate');
+    let template = document.querySelector('.tileTemplate');
 
     // create a clone to edit and append
     let clonedTile = template.cloneNode(true);
-    let tileImage = clonedTile.querySelector('#tileImg');
-    let tileName = clonedTile.querySelector('#tileName');
-    let tilePrice = clonedTile.querySelector('#tilePrice');
+    let tileImage = clonedTile.querySelector('.tileImg');
+    let tileName = clonedTile.querySelector('.tileName');
+    let tilePrice = clonedTile.querySelector('span.tilePrice');
 
     tileImage.src = selectedProductObj.img;
     tileImage.alt = tileName.innerText;
@@ -94,4 +86,15 @@ addProductButton.addEventListener("click", function() {
     productNameInput.disabled = false;
     productNameInput.value = '';
     itemPriceSpan.innerText = 0;
+});
+
+// event listener for cart list and closest list item
+cart.addEventListener("click", (event) => {
+    if (event.target.closest('.removeItemButton')){
+        // define variable to plug into the remove function
+        let tile = event.target.closest('li');
+        let price = parseFloat(tile.querySelector('span.tilePrice').innerText);
+        tile.remove();
+        updateTotalPrice(-price);
+    }  
 });

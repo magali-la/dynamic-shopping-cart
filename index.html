@@ -62,13 +62,13 @@
     <ul id="cart" class="list-group"></ul>
 
     <!-- make a list item template that will be cloned in the event listener for the add product button -->
-    <li id="tileTemplate" class="d-none list-group-item d-flex flex-row justify-content-between align-items-center py-3 px-2 border-2">
+    <li class="tileTemplate d-none list-group-item d-flex flex-row justify-content-between align-items-center py-3 px-2 border-2">
         <div class="d-inline-flex">
-            <img id="tileImg" src="" alt="" class="img-thumbnail">            
+            <img src="" alt="" class="tileImg img-thumbnail">            
         </div>
-        <h5 id="tileName">Name</h5>
-        <p class="tilePrice fs-5 align-self-center">$<span id="tilePrice">100</span></p>
-        <button id="removeItemButton" class="btn fs-5 btn-danger"><i class="bi bi-cart-dash fs-4"></i> Remove Item</button>
+        <h5 class="tileName">Name</h5>
+        <p class="fs-5 align-self-center">$<span class="tilePrice">100</span></p>
+        <button class="removeItemButton btn fs-5 btn-danger"><i class="bi bi-cart-dash fs-4"></i> Remove Item</button>
     </li>
 </body>
 </html>
