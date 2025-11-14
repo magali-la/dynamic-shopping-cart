@@ -53,6 +53,12 @@ productsRow.addEventListener("click", (event) => {
 });
 
 addProductButton.addEventListener("click", function() {
+    // handle edge case - if no product is selected or the input value is empty, alert the user
+    if (productNameInput.value === ''){
+        alert('Please select a product to add to cart');
+        return;
+    };
+
     // take the input value at that point in time and the price
     let selectedProductObj = {
         name: productNameInput.value,
@@ -83,4 +89,9 @@ addProductButton.addEventListener("click", function() {
 
     // append to cart
     cart.appendChild(clonedTile);
+    
+    // reset the input to '' and the price back to 0
+    productNameInput.disabled = false;
+    productNameInput.value = '';
+    itemPriceSpan.innerText = 0;
 });
