@@ -75,6 +75,9 @@ addProductButton.addEventListener("click", function() {
     tileName.innerText = selectedProductObj.name;
     tilePrice.innerText = selectedProductObj.price;
 
+    // remove display none class from template clone
+    clonedTile.classList.remove('d-none');
+
     // append to cart
     cart.appendChild(clonedTile);
 });
