@@ -16,7 +16,7 @@ let totalPrice = 0;
 // function to calculate total price
 function updateTotalPrice(amount) {
     totalPrice += amount;
-    totalPrice.innerText = totalPrice.toFixed(2);
+    totalPriceSpan.innerText = totalPrice.toFixed(2);
 }
 
 // function to remove an item
@@ -77,6 +77,9 @@ addProductButton.addEventListener("click", function() {
 
     // remove display none class from template clone
     clonedTile.classList.remove('d-none');
+
+    // adjust total price span with the object's price converted to a number
+    updateTotalPrice(parseFloat(selectedProductObj.price));
 
     // append to cart
     cart.appendChild(clonedTile);
